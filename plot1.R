@@ -6,7 +6,9 @@ setwd("~/MyR/Coursera/EDA/WEEK1")
 Sys.setlocale("LC_TIME", "English")
 
 # read all data from file household_power_consumption.txt
-df_all <-read.table("household_power_consumption.txt", header = TRUE, sep = ";")
+df_all <- read.table(unz("exdata%2Fdata%2Fhousehold_power_consumption.zip", "household_power_consumption.txt"), header=TRUE, sep=";")
+
+#df_all <-read.table("household_power_consumption.txt", header = TRUE, sep = ";")
 
 # subset the data from 2007-02-01 to 2007-02-02
 df <- subset(df_all, Date == "1/2/2007" | Date == "2/2/2007")
